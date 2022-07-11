@@ -1,8 +1,8 @@
 pipeline {
     agent none
         environment {
-        ENV_DOCKER = credentials('dockerhub')
-        DOCKERIMAGE = "dummy/dummy"
+        ENV_DOCKER = credentials('Docker')
+        DOCKERIMAGE = "kirkwadep1/sre-lab"
         EKS_CLUSTER_NAME = "demo-cluster"
     }
     stages {
@@ -35,5 +35,6 @@ pipeline {
             steps {
                 sh 'echo deploy to kubernetes'               
             }
+        }
     }
 }
